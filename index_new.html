@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Result Portal - Marksheet Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🎓 College Result Portal</h1>
+
+        <div class="form-group">
+            <label>Roll Number</label>
+            <input type="text" id="roll" placeholder="e.g., CS001, IT050, EC100">
+            <small style="color: #999; margin-top: 5px; display: block;">💡 Tip: Valid rolls are CS/IT/EC/ME/CE +
+                001-200 (e.g., CS050, IT120)</small>
+        </div>
+
+        <div class="form-group">
+            <label>Select Course</label>
+            <select id="branch">
+                <option value="">Select Course</option>
+                <option value="CS">Computer Science (CS)</option>
+                <option value="IT">Information Technology (IT)</option>
+                <option value="EC">Electronics & Communication (EC)</option>
+                <option value="ME">Mechanical Engineering (ME)</option>
+                <option value="CE">Civil Engineering (CE)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Select Semester</label>
+            <select id="semester">
+                <option value="">Select Semester</option>
+                <option value="1">1st Semester</option>
+                <option value="2">2nd Semester</option>
+                <option value="3">3rd Semester</option>
+                <option value="4">4th Semester</option>
+                <option value="5">5th Semester</option>
+                <option value="6">6th Semester</option>
+                <option value="7">7th Semester</option>
+                <option value="8">8th Semester</option>
+            </select>
+        </div>
+
+        <button class="main-btn" onclick="showMarksheet()">📋 Generate Result</button>
+
+        <div id="error"></div>
+        <div id="success"></div>
+
+        <div id="marksheet">
+
+            <div class="marksheet-header">
+                <h2>Semester Marksheet</h2>
+                <p style="color: #666; margin: 5px 0;">Academic Performance Report</p>
+            </div>
+
+            <div class="student-info">
+                <div class="info-item">
+                    <b>Roll Number:</b><br>
+                    <span id="showRoll"></span>
+                </div>
+                <div class="info-item">
+                    <b>Name:</b><br>
+                    <span id="showName"></span>
+                </div>
+                <div class="info-item">
+                    <b>Course:</b><br>
+                    <span id="showBranch"></span>
+                </div>
+                <div class="info-item">
+                    <b>Semester:</b><br>
+                    <span id="showSemester"></span>
+                </div>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject Code</th>
+                        <th>Subject Name</th>
+                        <th>Credits</th>
+                        <th>Grade</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody id="subjectsTable">
+                </tbody>
+            </table>
+
+            <div class="result-box">
+                <table class="result-table">
+                    <tr>
+                        <td style="color: #667eea;">Result Status</td>
+                        <td style="color: #667eea;">SGPA</td>
+                        <td style="color: #667eea;">CGPA</td>
+                    </tr>
+                    <tr>
+                        <td id="resultStatus" class="pass">PASS</td>
+                        <td id="sgpa">0.00</td>
+                        <td id="cgpa">0.00</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="button-group">
+                <button class="print-btn" onclick="printMarksheet()">🖨️ Print</button>
+                <button class="download-btn" onclick="downloadMarksheet()">⬇️ Download PDF</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
