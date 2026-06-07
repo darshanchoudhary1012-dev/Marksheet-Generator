@@ -291,7 +291,7 @@
 
         <div class="form-group">
             <label>Roll Number</label>
-            <input type="text" id="roll" placeholder="e.g., CS001, 0829IT241036, EC100">
+            <input type="text" id="roll" placeholder="e.g., CS001,IT001, EC100">
             <small style="color: #999; margin-top: 5px; display: block;">💡 Tip: Valid rolls are CS/IT/EC/ME/CE +
                 001-200 (e.g., CS050, IT120)</small>
         </div>
@@ -377,8 +377,8 @@
                     </tr>
                     <tr>
                         <td id="resultStatus" class="pass">PASS</td>
-                        <td id="sgpa">0.00</td>
-                        <td id="cgpa">0.00</td>
+                        <td id="sgpa">10.00</td>
+                        <td id="cgpa">10.00</td>
                     </tr>
                 </table>
             </div>
@@ -587,8 +587,7 @@
             }
 
             document.getElementById("marksheet").style.display = "block";
-            success.innerText = "✅ Result retrieved successfully";
-
+             
             window.scrollTo({
                 top: document.getElementById("marksheet").offsetTop - 50,
                 behavior: "smooth"
