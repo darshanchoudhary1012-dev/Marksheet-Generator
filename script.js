@@ -64,9 +64,9 @@ const subjects = {
     ]
 };
 
-const grades = ['A+', 'A', 'A-', 'B+', 'B', 'B-', 'C+', 'C', 'F'];
+const grades = ['A+', 'A', 'B+', 'B', 'C+', 'C'];
 const gradePoints = {
-    'A+': 4.0, 'A': 3.7, 'A-': 3.3, 'B+': 3.0, 'B': 2.7, 'B-': 2.3, 'C+': 2.0, 'C': 1.7, 'F': 0.0
+    'A+': 10, 'A': 9, 'B+':8, 'B': 7,  'C+': 6, 'C': 5
 };
 
 // Generate sequential student data
@@ -182,8 +182,8 @@ function showMarksheet() {
     const hasF = semesterData.some(s => s.grade === 'F');
     const resultStatus = document.getElementById("resultStatus");
     if (hasF) {
-        resultStatus.innerText = "FAIL";
-        resultStatus.className = "fail";
+        resultStatus.innerText = "Pass";
+        resultStatus.className = "Pass";
     } else {
         resultStatus.innerText = "PASS";
         resultStatus.className = "pass";
