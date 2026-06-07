@@ -2,8 +2,8 @@
 let studentsData = [];
 
 const courses = ['CS', 'IT', 'EC', 'ME', 'CE'];
-const firstNames = ['AARAV', 'VIVAAN', 'ARJUN', 'ADITYA', 'ROHAN', 'HARSH', 'PRIYA', 'NEHA', 'ANANYA', 'ZARA', 'MAYA', 'POOJA', 'RAHUL', 'NIKHIL', 'SAURAV', 'VARUN', 'SHIVA', 'RAVI', 'AKASH', 'YASH', 'DIVYA', 'ANJALI', 'SHRUTI', 'ISHA', 'SNEHA'];
-const lastNames = ['SHARMA', 'PATEL', 'SINGH', 'KUMAR', 'VERMA', 'GUPTA', 'REDDY', 'KHAN', 'JOSHI', 'MISHRA', 'NAIR', 'BHAT', 'IYER', 'PILLAI', 'DESAI', 'KAPOOR', 'MALHOTRA', 'BANSAL', 'AGARWAL', 'CHANDRA'];
+const firstNames = ['SHUBHAM', 'VIVAAN', 'ARJUN', 'ADITYA', 'ROHAN', 'HARSH', 'PRIYA', 'NEHA', 'ANANYA', 'ZARA', 'MAYA', 'POOJA', 'RAHUL', 'NIKHIL', 'SAURAV', 'VARUN', 'SHIVA', 'RAVI', 'AKASH', 'YASH', 'DIVYA', 'ANJALI', 'SHRUTI', 'ISHA', 'SNEHA'];
+const lastNames = ['BAIS', 'PATEL', 'SINGH', 'KUMAR', 'VERMA', 'GUPTA', 'REDDY', 'KHAN', 'JOSHI', 'MISHRA', 'NAIR', 'BHAT', 'IYER', 'PILLAI', 'DESAI', 'KAPOOR', 'MALHOTRA', 'BANSAL', 'AGARWAL', 'CHANDRA'];
 
 const subjects = {
     '1': [
@@ -111,7 +111,7 @@ function generateStudentsData() {
                 });
 
                 student.semesters[sem].sgpa = (totalPoints / totalCredits).toFixed(2);
-                student.semesters[sem].cgpa = (Math.random() * 4.0).toFixed(2);
+                student.semesters[sem].cgpa = (Math.random() * 10).toFixed(2);
             }
 
             studentsData.push(student);
@@ -190,8 +190,6 @@ function showMarksheet() {
     }
 
     document.getElementById("marksheet").style.display = "block";
-    success.innerText = "✅ Result retrieved successfully";
-
     window.scrollTo({
         top: document.getElementById("marksheet").offsetTop - 50,
         behavior: "smooth"
